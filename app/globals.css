@@ -3,31 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+   --font-volkhov: 'Volkhov';
+   --font-inter: 'Poppins', sans-serif;
+   --font-open_sans: 'Open_sans', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  
+.volkhov {
+    font-family: var(--font-volkhov);
+}
+  
+.inter {
+    font-family: var(--font-poppins);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.opensans{
+    font-family: var(--font-open_sans);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h2{
+    font-family: var(--font-volkhov);
+    color: #14183E;
 }
