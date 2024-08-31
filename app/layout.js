@@ -26,24 +26,125 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} ${volkhov.variable} ${open_sans.variable} overflow-x-hidden`}>
+      <body
+        className={`${poppins.className} ${volkhov.variable} ${open_sans.variable} overflow-x-hidden`}
+      >
         <nav className="container mx-auto w-5/6 flex justify-between py-8 items-center">
-          <Image src={"/logo.png"} alt="logo" width={92} height={64}/>
+          <Image src={"/logo.png"} alt="logo" width={92} height={64} />
 
           {/* urls */}
           <ul className="flex space-x-14 font-medium">
-            {
-              links.map(link => (
-                <li key={link.id}>
-                  <Link href={"#"}>{link.title}</Link>
-                </li>
-              ))
-            }
+            {links.map((link) => (
+              <li key={link.id}>
+                <Link href={"#"}>{link.title}</Link>
+              </li>
+            ))}
 
-            <li><Link href={"#"} className="flex items-center">EN &nbsp; <Image src="/arrow.svg" alt="select language" width={8} height={8} /></Link></li>
+            <li>
+              <Link href={"#"} className="flex items-center">
+                EN &nbsp;{" "}
+                <Image
+                  src="/arrow.svg"
+                  alt="select language"
+                  width={8}
+                  height={8}
+                />
+              </Link>
+            </li>
           </ul>
         </nav>
         {children}
+        <footer className="w-5/6 mx-auto grid grid-cols-12 py-7">
+          <div className="col-span-3 h-48 px-8">
+            <h1 className="font-medium text-4xl">Jadoo.</h1>
+            <p className="text-[#5E6282] text-xs">
+              Book your trip in minute, get full Control for much longer.
+            </p>
+          </div>
+
+          <div className="col-span-6 grid grid-cols-3">
+            <div className="space-y-4">
+              <h6 className="font-bold text-xl">Company</h6>
+              <ul className="font-medium text-[#5E6282]">
+                <li>About</li>
+                <li>Careers</li>
+                <li>Mobile</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h6 className="font-bold text-xl">Contact</h6>
+              <ul className="font-medium text-[#5E6282]">
+                <li>Help/FAQ</li>
+                <li>Press</li>
+                <li>Affiliates</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h6 className="font-bold text-xl">More</h6>
+              <ul className="font-medium text-[#5E6282]">
+                <li>Airline Fees</li>
+                <li>Airline</li>
+                <li>Low fare tips</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="col-span-3 h-48 space-y-4">
+            <div className="flex">
+              <Image
+                src="/facebook.svg"
+                alt="facebook logo"
+                width={64}
+                height={16}
+              />
+              <Image
+                src="/insta.svg"
+                alt="Instagram logo"
+                width={64}
+                height={16}
+              />
+              <Image
+                src="/twitter.svg"
+                alt="Twitter logo"
+                width={64}
+                height={16}
+              />
+            </div>
+            <p className="text-[#5E6282] text-xl px-5">Discover our app</p>
+            <div className="text-white grid grid-cols-2">
+              <button className="bg-black rounded-full px-5 py-3 flex space-x-4 mx-auto items-center">
+                <Image
+                  src="/google.svg"
+                  alt="play store logo"
+                  width={18}
+                  height={16}
+                />
+                <Image
+                  src="/googleText.svg"
+                  alt="play store logo"
+                  width={72}
+                  height={16}
+                />
+              </button>
+              <button className="bg-black rounded-full px-5 py-3 flex space-x-4 mx-auto items-center">
+                <Image
+                  src="/apple.svg"
+                  alt="apple logo"
+                  width={18}
+                  height={16}
+                />
+                <Image
+                  src="/appleText.svg"
+                  alt="apple logo"
+                  width={72}
+                  height={16}
+                />
+              </button>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
